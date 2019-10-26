@@ -92,5 +92,12 @@ select sensor channel from station
 
 save plots and open in background
 
+
+
+next:
+use the spatial constraints
+
+pull events
+
 '''
 
