@@ -81,23 +81,3 @@ while True:
         print("--> done")
 
         subprocess.check_call("open %s" % path, shell=True)
-
-
-
-'''
-
-save a file for the most recent chosen
-
-select sensor channel from station
-
-save plots and open in background
-
-
-
-next:
-use the spatial constraints
-
-pull events
-
-'''
-
