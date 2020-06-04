@@ -21,6 +21,8 @@ get up to speed on using git + github
 
 git clone https://github.com/brianhouse/infradata
 
+to run: `./cli.py`
+
 
 ## IRIS refs
 
