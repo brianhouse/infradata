@@ -6,3 +6,5 @@ dev
 *.txt
 data
 ref
+*.pklz
+*.png

@@ -28,4 +28,4 @@ to run: `./cli.py`
 
 https://ds.iris.edu/ds/nodes/dmc/tools/data_channels/#???
 
-http://ds.iris.edu/gmap/#network=*&amp;channel=BDF&amp;starttime=2019-01-01&amp;planet=earth
+http://ds.iris.edu/gmap/#network=*&channel=BDF&starttime=2019-01-01&planet=earth
