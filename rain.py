@@ -66,7 +66,7 @@ print(f"--> freq bins {len(freqs)}")
 print()
 print(f"Drawing...")
 X_MULT = 1
-Y_MULT = 1
+Y_MULT = 2
 OVERLAP = 0
 surface, ctx = drawing(len(ts) * X_MULT, len(freqs) * Y_MULT)
 ctx.set_line_width(1)
