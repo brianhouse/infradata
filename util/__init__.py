@@ -38,3 +38,15 @@ def normalize(signal, minimum=None, maximum=None):
     maximum -= minimum
     signal /= maximum
     return signal
+
+def sigmoid(signal, offset, sharpness=1):
+    low = np.min(signal)
+    high = np.max(signal)
+    remapped = (signal - offset) * sharpness
+    y = remapped / (1 + np.abs(remapped))
+    x_high = (high - offset) * sharpness
+    x_low = (low - offset) * sharpness
+    y_high = x_high / (1 + np.abs(x_high))
+    y_low = x_low / (1 + np.abs(x_low))
+    y = (y - y_low) / (y_high - y_low)
+    return y
