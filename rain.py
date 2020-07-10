@@ -56,17 +56,19 @@ print(f"--> saved {filename}")
 print()
 print("Analyzing as audio...")
 spectrum, freqs, ts, image = plt.specgram(signal, NFFT=WINDOW_SIZE, Fs=fs, noverlap=WINDOW_SIZE / 2, mode="psd", scale="dB")
+spectrum = np.abs(spectrum)             # convert to amplitude / magnitude
 spectrum = np.log10(spectrum)           # convert to logarithmic dB scale
 spectrum = normalize(spectrum)          # normalize
 print(f"--> time columns {len(ts)}")
-print(f"--> freq bins {len(freqs)}")
+print(f"--> freq rows {len(freqs)}")
 
+spectrum = sigmoid(spectrum, 1)
 
 ## draw
 print()
 print(f"Drawing...")
 X_MULT = 1
-Y_MULT = 2
+Y_MULT = 1
 OVERLAP = 0
 surface, ctx = drawing(len(ts) * X_MULT, len(freqs) * Y_MULT)
 ctx.set_line_width(1)
@@ -81,6 +83,8 @@ for f in range(len(freqs)):
         ctx.rectangle(x - OVERLAP, y - OVERLAP, X_MULT + OVERLAP*2, Y_MULT + OVERLAP*2)
         ctx.fill()
 
-
 output(surface)
-# plt.show()    # built-in vis
+
+# colormap = plt.get_cmap('cividis')
+# plt.imshow(colormap(np.flipud(spectrum)))
+# plt.show()
