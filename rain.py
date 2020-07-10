@@ -62,7 +62,7 @@ spectrum = normalize(spectrum)          # normalize
 print(f"--> time columns {len(ts)}")
 print(f"--> freq rows {len(freqs)}")
 
-spectrum **= 2.5    # compress high values a bit (gamma function)
+spectrum **= 2.8    # compress high values a bit (gamma function)
 
 ## draw
 print()
