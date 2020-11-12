@@ -15,8 +15,8 @@ def drawing(width, height):
     ctx.fill()
     return surface, ctx
 
-def output(surface):
-    filename = f"charts/{int(time.time())}.png"
+def output(surface, prefix):
+    filename = f"charts/{prefix}.png"
     surface.write_to_png(filename)
     subprocess.call(["open", filename])
 
